@@ -7,16 +7,17 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     <head>
       <link rel="stylesheet" type="text/css" href="styles.css"></link>
     </head>
-    
+
     <body>
       <h2><div contenteditable="true">Test Tables</div></h2>
-      
+
       <xsl:for-each select="test/temperature/mode">
-      
+
         <table border="1">
           <!-- Mode Header -->
-          <tr bgcolor="orange">
-            <th colspan="9"><div contenteditable="true"><xsl:value-of select="@name"/></div></th>
+          <tr>
+            <xsl:attribute name="class"><xsl:value-of select="@id"/></xsl:attribute>
+            <th colspan="9"><div contenteditable="true"><xsl:value-of select="@id"/></div></th>
           </tr>
           <xsl:for-each select="voltage">
 
@@ -86,7 +87,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
           </xsl:for-each>
         </table>
         <br></br><br></br>
-      
+
       </xsl:for-each>
     </body>
   </html>

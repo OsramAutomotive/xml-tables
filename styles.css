@@ -8,9 +8,21 @@ table, th, td {
   padding: 5px;
 }
 
+.drl {
+  background-color: blue;
+}
+
+.turn {
+  background-color: purple;
+}
+
+.park {
+  background-color: orange;
+}
+
+
 /*
 tr:nth-child(even) {
   background-color: #f2f2f2;
 }
 */
-
