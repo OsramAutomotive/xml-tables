@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="limits.xsl"?>
+
+<root>
+  
+  <product>P552 MCA</product>
+  <phase>PV</phase>
+  <revision>C1</revision>
+  
+  <boards>
+    <board id="B1">
+      <module>LB</module>
+      <bins></bins>
+      <outage>False</outage>
+    </board>
+    <board id="B2">
+      <module>HB</module>
+      <bins></bins>
+      <outage>False</outage>
+    </board>
+    <board id="B3">
+      <module>DRL</module>
+      <bins></bins>
+      <outage>False</outage>
+    </board>
+    <board id="B4">
+      <module>PARK</module>
+      <bins></bins>
+      <outage>False</outage>
+    </board>
+    <board id="B5">
+      <module>Turn</module>
+      <bins>8J 4E</bins>
+      <outage>True</outage>
+    </board>
+    <board id="B6">
+      <module>Outage</module>
+      <bins></bins>
+      <outage>NA</outage>
+    </board>
+  </boards>
+  
+  <limits>
+    
+    <modes>
+    
+      <mode name="DRL">
+        <temperature value="23C">
+          <voltage value="9">
+            <min>1.11</min>
+            <max>2.33</max>
+          </voltage>
+            <voltage value="14.1">
+            <min>1.05</min>
+            <max>2.25</max>
+          </voltage>
+          <voltage value="16">
+            <min>0.96</min>
+            <max>2.09</max>
+          </voltage>
+        </temperature>
+        <temperature value="-40C">
+          <voltage value="9">
+            <min>1.05</min>
+            <max>2.30</max>
+          </voltage>
+            <voltage value="14.1">
+            <min>1.02</min>
+            <max>2.23</max>
+          </voltage>
+          <voltage value="16">
+            <min>0.93</min>
+            <max>2.04</max>
+          </voltage>
+        </temperature>
+        <temperature value="85C">
+          <voltage value="9">
+            <min>1.13</min>
+            <max>2.39</max>
+          </voltage>
+            <voltage value="14.1">
+            <min>1.11</min>
+            <max>2.29</max>
+          </voltage>
+          <voltage value="16">
+            <min>0.99</min>
+            <max>2.15</max>
+          </voltage>
+        </temperature>
+      </mode>
+      
+      <mode name="PARK">
+        <temperature value="23C">
+          <voltage value="9">
+            <min>1.11</min>
+            <max>2.33</max>
+          </voltage>
+            <voltage value="14.1">
+            <min>1.05</min>
+            <max>2.25</max>
+          </voltage>
+          <voltage value="16">
+            <min>0.96</min>
+            <max>2.09</max>
+          </voltage>
+        </temperature>
+        <temperature value="-40C">
+          <voltage value="9">
+            <min>1.05</min>
+            <max>2.30</max>
+          </voltage>
+            <voltage value="14.1">
+            <min>1.02</min>
+            <max>2.23</max>
+          </voltage>
+          <voltage value="16">
+            <min>0.93</min>
+            <max>2.04</max>
+          </voltage>
+        </temperature>
+        <temperature value="85C">
+          <voltage value="9">
+            <min>1.13</min>
+            <max>2.39</max>
+          </voltage>
+            <voltage value="14.1">
+            <min>1.11</min>
+            <max>2.29</max>
+          </voltage>
+          <voltage value="16">
+            <min>0.99</min>
+            <max>2.15</max>
+          </voltage>
+        </temperature>
+      </mode>
+  
+        <mode name="TURN">
+        <temperature value="23C">
+          <voltage value="9">
+            <min>1.11</min>
+            <max>2.33</max>
+          </voltage>
+            <voltage value="14.1">
+            <min>1.05</min>
+            <max>6666</max>
+          </voltage>
+          <voltage value="16">
+            <min>0.96</min>
+            <max>2.09</max>
+          </voltage>
+        </temperature>
+        <temperature value="-40C">
+          <voltage value="9">
+            <min>1.05</min>
+            <max>2.30</max>
+          </voltage>
+            <voltage value="14.1">
+            <min>1.02</min>
+            <max>2.23</max>
+          </voltage>
+          <voltage value="16">
+            <min>0.93</min>
+            <max>2.04</max>
+          </voltage>
+        </temperature>
+        <temperature value="85C">
+          <voltage value="9">
+            <min>1.13</min>
+            <max>2.39</max>
+          </voltage>
+            <voltage value="14.1">
+            <min>1.11</min>
+            <max>2.29</max>
+          </voltage>
+          <voltage value="16">
+            <min>0.99</min>
+            <max>2.15</max>
+          </voltage>
+        </temperature>
+      </mode>
+      
+        <mode name="PARKTURN">
+        <temperature value="23C">
+          <voltage value="9">
+            <min>1.11</min>
+            <max>2.33</max>
+          </voltage>
+            <voltage value="14.1">
+            <min>1.05</min>
+            <max>2.25</max>
+          </voltage>
+          <voltage value="16">
+            <min>0.96</min>
+            <max>2.09</max>
+          </voltage>
+        </temperature>
+        <temperature value="-40C">
+          <voltage value="9">
+            <min>1.05</min>
+            <max>2.30</max>
+          </voltage>
+            <voltage value="14.1">
+            <min>1.02</min>
+            <max>2.23</max>
+          </voltage>
+          <voltage value="16">
+            <min>0.93</min>
+            <max>2.04</max>
+          </voltage>
+        </temperature>
+        <temperature value="85C">
+          <voltage value="9">
+            <min>1.13</min>
+            <max>2.39</max>
+          </voltage>
+            <voltage value="14.1">
+            <min>1.11</min>
+            <max>2.29</max>
+          </voltage>
+          <voltage value="16">
+            <min>0.99</min>
+            <max>2.15</max>
+          </voltage>
+        </temperature>
+      </mode>
+  
+        <mode name="DRLTURN">
+        <temperature value="23C">
+          <voltage value="9">
+            <min>1.11</min>
+            <max>2.33</max>
+          </voltage>
+            <voltage value="14.1">
+            <min>1.05</min>
+            <max>2.25</max>
+          </voltage>
+          <voltage value="16">
+            <min>0.96</min>
+            <max>2.09</max>
+          </voltage>
+        </temperature>
+        <temperature value="-40C">
+          <voltage value="9">
+            <min>1.05</min>
+            <max>2.30</max>
+          </voltage>
+            <voltage value="14.1">
+            <min>1.02</min>
+            <max>2.23</max>
+          </voltage>
+          <voltage value="16">
+            <min>0.93</min>
+            <max>2.04</max>
+          </voltage>
+        </temperature>
+        <temperature value="85C">
+          <voltage value="9">
+            <min>1.13</min>
+            <max>2.39</max>
+          </voltage>
+            <voltage value="14.1">
+            <min>1.11</min>
+            <max>2.29</max>
+          </voltage>
+          <voltage value="16">
+            <min>0.99</min>
+            <max>2.15</max>
+          </voltage>
+        </temperature>
+      </mode>
+  
+    </modes>
+    
+  </limits>
+  
+</root>
+
+

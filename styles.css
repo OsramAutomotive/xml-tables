@@ -1,28 +1,96 @@
+/* Basic HTML Elements*/
+body {
+  font-family: Calibri, Tahoma, Verdana, Segoe, sans-serif;
+  text-align: center;
+}
+
 table {
   border-collapse: collapse;
 }
 
-table, th, td {
+table {
   text-align: center;
   border: 1px solid black;
-  padding: 5px;
 }
 
-.drl {
-  background-color: blue;
+th {
+  padding: 5px 8px;
 }
 
-.turn {
-  background-color: purple;
+td {
+  padding: 5px 20px;
 }
 
-.park {
+tr:hover {
+  background-color: lightyellow;
+}
+
+
+/* Modes */
+.DRL {
+  background-color: #00E5EE;
+}
+
+.TURN {
+  background-color: mediumpurple;
+}
+
+.PARK {
+  background-color: darkorange;
+}
+
+.PARKTURN {
   background-color: orange;
 }
 
-
-/*
-tr:nth-child(even) {
-  background-color: #f2f2f2;
+.DRLTURN {
+  background-color: #ff96ca;
 }
-*/
+
+
+/* Temperatures */
+.temp23C {
+  background-color: palegreen;
+}
+
+.temp-40C {
+  background-color: deepskyblue;
+}
+
+.temp85C {
+  background-color: indianred;
+}
+
+
+/* Layout Styling */
+.info-container {
+  display: flex;
+  justify-content: center;
+}
+
+.top-container {
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.mode-tables-container {
+  display: flex;
+  justify-content: center;
+}
+
+.temp-table-container {
+  margin-right: 10px;
+}
+
+.mode-header {
+  margin: auto;
+  width: 100%;
+  border-radius: 5px;
+}
+
+
+/* Misc */
+.board-table tr:nth-child(odd){
+   background-color: #ccc;
+}
+
