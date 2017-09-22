@@ -14,7 +14,6 @@ const saveChanges = () => {
 
   document.querySelectorAll('.temp-table').forEach(table => {
     let header = table.getElementsByClassName('temp-table-header')[0];
-    console.log(header.innerHTML);
     header.className = 'temp-table-header ' + 'color'+header.innerHTML;
     table.className = 'temp-table ' + 'temp'+header.innerHTML;
   });
@@ -23,9 +22,11 @@ const saveChanges = () => {
 // Voltage
 const addVoltage = () => {
   let voltageValue = prompt("Enter the value of the voltage:", "13.5");
+  let rowIndex = compareVoltage(voltageValue, document.querySelectorAll('.temp-table')[0]);
   if (voltageValue != null) {
     document.querySelectorAll('.temp-table').forEach(table => {
-      let row = table.insertRow(table.rows.length);
+      // let row = table.insertRow(table.rows.length);
+      let row = table.insertRow(rowIndex);
       row.id = "voltage";
       let voltage = document.createElement('th');
       row.appendChild(voltage);
@@ -39,6 +40,15 @@ const addVoltage = () => {
     });
     saveChanges();
   }
+};
+
+const compareVoltage = (value, table) => {
+  for (i = 2; i < table.rows.length; i++) {
+    if (parseFloat(value) < parseFloat(table.rows[i].className)) {
+      return i;
+    }
+  }
+  return i;
 };
 
 const removeVoltage = () => {
@@ -64,17 +74,19 @@ const addTemp = () => {
 };
 
 const removeTemp = () => {
-  let tablesDivs = document.querySelectorAll('.mode-tables');
-  tablesDivs.forEach(tablesDiv => {
-    let tables = tablesDiv.children;
-    (tables.length > 3) && tablesDiv.removeChild(tablesDiv.lastChild);
-  });
-  saveChanges();
+  let temperature = prompt("Enter the temperature to remove:", "95C");
+  if (temperature != null) {
+    let tablesToRemove = document.querySelectorAll('.temp-table.temp'+temperature);
+    tablesToRemove.forEach(table => {
+      table.parentNode.removeChild(table);
+    });
+    saveChanges();
+  }
 };
 
 // Mode
 const addMode = () => {
-  let modeName = prompt("Enter the name of the mode:", "STOP");
+  let modeName = prompt("Enter the name of the mode:", "MODE");
   if (modeName != null) {
     let modesDiv = document.getElementById('modes');
     let newMode = modesDiv.lastChild.cloneNode(true);

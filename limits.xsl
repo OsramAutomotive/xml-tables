@@ -12,6 +12,10 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     <body>
       <div id="content" contenteditable="true">
 
+        <div>
+          <button class="save-button" onClick="saveChanges()">Save Changes</button>
+        </div>
+
         <h1><u>TEST STATION LIMITS</u></h1>
         <div class="info">
 
