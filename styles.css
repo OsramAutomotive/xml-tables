@@ -21,9 +21,9 @@ td {
   padding: 5px 20px;
 }
 
-/*tr:hover {
+tr:hover {
   background-color: lightyellow;
-}*/
+}
 
 
 /* Modes */
@@ -78,6 +78,12 @@ td {
 .top-container {
   margin-left: 50px;
   margin-right: 50px;
+}
+
+.project-info {
+  background-color: khaki;
+  padding: 25px;
+  border-radius: 15px;
 }
 
 .actions {

@@ -52,10 +52,13 @@ const compareVoltage = (value, table) => {
 };
 
 const removeVoltage = () => {
-  document.querySelectorAll('.temp-table').forEach(table => {
-    (table.rows.length > 3) && table.deleteRow(table.rows.length-1);
-  });
-  saveChanges();
+  let voltage = prompt("Enter voltage to remove:", "13.5");
+  if (voltage != null) {
+    document.querySelectorAll('#voltage').forEach(tr => {
+      (tr.className == voltage) && tr.parentNode.removeChild(tr);
+    });
+    saveChanges();
+  }
 };
 
 // Temperature
@@ -98,8 +101,12 @@ const addMode = () => {
 };
 
 const removeMode = () => {
-  let modesDiv = document.getElementById('modes');
-  (modesDiv.children.length > 2) && modesDiv.removeChild(modesDiv.lastChild);
-  saveChanges();
-  window.scrollTo(0,document.body.scrollHeight);
+  let modeName = prompt("Enter the mode to remove:", "LBHB");
+  if (modeName != null) {
+    let mode = document.getElementById(modeName);
+    mode.scrollIntoView();
+    mode.parentNode.removeChild(mode);
+    // (modesDiv.children.length > 2) && modesDiv.removeChild(modesDiv.lastChild);
+    saveChanges();
+  }
 };

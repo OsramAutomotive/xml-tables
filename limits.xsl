@@ -20,14 +20,14 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
         <div class="info">
 
           <!-- Limits File Information -->
-          <div class="top-container">
+          <div class="top-container project-info">
             <h2>Product: <xsl:value-of select="root/product"/></h2>
             <h2>Phase: <xsl:value-of select="root/phase"/></h2>
             <h2>Revision: <xsl:value-of select="root/revision"/></h2>
           </div>
 
           <!-- Board Module Information -->
-          <div class="top-container">
+          <div class="top-container board-info">
             <table class="board-table">
               <tr>
                 <th>Board</th>
