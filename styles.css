@@ -118,16 +118,14 @@ tr:hover {
   margin-right: 10px;
 }
 
-.board-table {
-  border: 1px solid black;
-}
-
 .board-table tr:nth-child(odd) {
   background-color: #ccc;
 }
 
-table tr.board-change {
-  border: 0px;
+table tr.board-change td {
+  border: none;
+  border-width: 0;
+  background-color: white;
 }
 
 
