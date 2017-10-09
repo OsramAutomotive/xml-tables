@@ -1,0 +1,17 @@
+
+<body>
+
+<!-- <a href="data:application/xml;charset=utf-8,your code here" download="filename.html">Save</a> -->
+
+<h1>Save As TESTTT</h1>
+
+<a href="data:application/xml;charset=utf-8" download="filename.html" onClick=saveFile()>Save</a>
+
+<script>
+  const saveFile = () => {
+    console.log('Run this code first');
+    document.body.innerHTML += "<p>Added at click</p>";
+  };
+</script>
+
+</body>

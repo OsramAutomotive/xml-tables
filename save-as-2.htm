@@ -1,0 +1,15 @@
+<html>
+<body>
+	<script>
+		function download(filename) {
+		        var pom = document.createElement('a');
+		        pom.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+		        pom.setAttribute('download', filename);
+		        pom.click();
+		}
+	</script>
+
+	<button onClick=download('test.html')>Save</button>
+
+</body>
+</html>

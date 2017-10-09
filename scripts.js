@@ -14,9 +14,12 @@ const saveChanges = () => {
 
   document.querySelectorAll('.temp-table').forEach(table => {
     let header = table.getElementsByClassName('temp-table-header')[0];
-    header.className = 'temp-table-header ' + 'color'+header.innerHTML;
-    table.className = 'temp-table ' + 'temp'+header.innerHTML;
+    header.className = 'temp-table-header ' + 'color' + header.innerHTML;
+    table.className = 'temp-table ' + 'temp' + header.innerHTML;
   });
+
+  console.log("clicked Save");
+  document.getElementById('save').href = window.location.href; // save as dialog window
 };
 
 // Voltage
@@ -25,7 +28,6 @@ const addVoltage = () => {
   let rowIndex = compareVoltage(voltageValue, document.querySelectorAll('.temp-table')[0]);
   if (voltageValue != null) {
     document.querySelectorAll('.temp-table').forEach(table => {
-      // let row = table.insertRow(table.rows.length);
       let row = table.insertRow(rowIndex);
       row.id = "voltage";
       let voltage = document.createElement('th');
@@ -106,7 +108,33 @@ const removeMode = () => {
     let mode = document.getElementById(modeName);
     mode.scrollIntoView();
     mode.parentNode.removeChild(mode);
-    // (modesDiv.children.length > 2) && modesDiv.removeChild(modesDiv.lastChild);
     saveChanges();
   }
+};
+
+// Board
+const addBoard = () => {
+  let boardTable = document.getElementById('board-table');
+  let newBoardNumber = getNewBoardNumber(boardTable.rows[boardTable.rows.length-2]);
+  let newRow = boardTable.insertRow(boardTable.rows.length-1);
+  newRow.className = "board";
+  newRow.id = 'B' + newBoardNumber;
+  let cell1 = newRow.insertCell(0);
+  let cell2 = newRow.insertCell(1);
+  let cell3 = newRow.insertCell(2);
+  let cell4 = newRow.insertCell(3);
+  cell1.innerHTML = 'B' + newBoardNumber;
+  cell2.innerHTML = "Module";
+  cell3.innerHTML = "";
+  cell4.innerHTML = "False";
+};
+
+const getNewBoardNumber = (lastBoard) => {
+  return parseInt(lastBoard.id.slice(1, lastBoard.id.length)) + 1;
+};
+
+const removeBoard = () => {
+  let boardTable = document.getElementById('board-table');
+  let lastBoard = boardTable.rows[boardTable.rows.length-2];
+  (boardTable.rows.length > 5) && lastBoard.parentNode.removeChild(lastBoard);
 };

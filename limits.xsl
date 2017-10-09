@@ -10,11 +10,12 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     </head>
 
     <body>
+      <div>
+        <a href="#" id="save" class="save-button" onClick="saveChanges()" download="filename">Save Changes</a>
+      </div>
+
       <div id="content" contenteditable="true">
 
-        <div>
-          <button class="save-button" onClick="saveChanges()">Save Changes</button>
-        </div>
 
         <h1><u>TEST STATION LIMITS</u></h1>
         <div class="info">
@@ -28,7 +29,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
           <!-- Board Module Information -->
           <div class="top-container board-info">
-            <table class="board-table">
+            <table class="board-table" id="board-table">
               <tr>
                 <th>Board</th>
                 <th>Module</th>
@@ -36,7 +37,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                 <th>Outage Link</th>
               </tr>
               <xsl:for-each select="root/boards/board">
-                <tr>
+                <tr class="board">
                   <xsl:attribute name="id"><xsl:value-of select="@id"/></xsl:attribute>
                   <td><xsl:value-of select="@id"/></td>
                   <td><xsl:value-of select="module"/></td>
@@ -44,6 +45,14 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                   <td><xsl:value-of select="outage"/></td>
                 </tr>
               </xsl:for-each>
+              <tr class="board-change">
+                <td colspan="2">
+                  <button onClick="addBoard()">(+) Add Board</button>
+                </td>
+                <td colspan="2">
+                  <button onClick="removeBoard()">(-) Remove Board</button>
+                </td>
+              </tr>
             </table>
           </div>
 

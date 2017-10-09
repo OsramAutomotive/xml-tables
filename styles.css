@@ -68,6 +68,18 @@ tr:hover {
   background-color: indianred;
 }
 
+.color45C {
+  background-color: #ffff94;
+}
+
+.color60C {
+  background-color: #ff9022;
+}
+
+.color95C {
+  background-color: #bb5d00;
+}
+
 
 /* Layout Styling */
 .info {
@@ -82,7 +94,7 @@ tr:hover {
 
 .project-info {
   background-color: khaki;
-  padding: 25px;
+  padding: 25px 40px;
   border-radius: 15px;
 }
 
@@ -110,13 +122,17 @@ tr:hover {
   border: 1px solid black;
 }
 
-.board-table tr:nth-child(odd){
+.board-table tr:nth-child(odd) {
   background-color: #ccc;
+}
+
+table tr.board-change {
+  border: 0px;
 }
 
 
 /* Buttons */
-button.save-button {
+a.save-button {
   font-size: 1.2em;
   margin: 10px;
 }

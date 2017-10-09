@@ -1,0 +1,1051 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="data-aio.xsl"?>
+
+
+<test name="P552 MCA PV Post TLE 85C FT">
+
+<temperature temp="85C">
+
+  <mode id="DRL">
+
+    <voltage value="9.0V">
+      <limits></limits>
+      <vsenses>
+        <vsense>
+          <name>VSense 1</name>
+          <min>8.796</min>
+          <max>9.102</max>
+          <check>G</check>
+        </vsense>
+        <vsense>
+          <name>VSense 2</name>
+          <min>8.803</min>
+          <max>8.998</max>
+          <check>G</check>
+        </vsense>
+      </vsenses>
+      <systems>
+        <system>
+          <name>System 76</name>
+          <min>1.263</min>
+          <max>1.265</max>
+          <check>G</check>
+        </system>
+        <system>
+          <name>System 77</name>
+          <min>1.2631</min>
+          <max>1.273</max>
+          <check>G</check>
+        </system>
+        <system>
+          <name>System 78</name>
+          <min>1.270</min>
+          <max>1.272</max>
+          <check>G</check>
+        </system>
+        <system>
+          <name>System 79</name>
+          <min>1.270</min>
+          <max>1.271</max>
+          <check>G</check>
+        </system>
+        <system>
+          <name>System 80</name>
+          <min>1.269</min>
+          <max>1.33</max>
+          <check>Out of Spec</check>
+        </system>
+        <system>
+          <name>System 81</name>
+          <min>1.245</min>
+          <max>1.250</max>
+          <check>G</check>
+        </system>
+      </systems>
+    </voltage>
+
+    <voltage value="14.1V">
+      <limits></limits>
+      <vsenses>
+        <vsense>
+          <name>VSense 1</name>
+          <min>13.996</min>
+          <max>14.102</max>
+          <check>G</check>
+        </vsense>
+        <vsense>
+          <name>VSense 2</name>
+          <min>13.993</min>
+          <max>14.201</max>
+          <check>G</check>
+        </vsense>
+      </vsenses>
+      <systems>
+        <system>
+          <name>System 76</name>
+          <min>1.763</min>
+          <max>1.765</max>
+          <check>G</check>
+        </system>
+        <system>
+          <name>System 77</name>
+          <min>1.6631</min>
+          <max>1.673</max>
+          <check>G</check>
+        </system>
+        <system>
+          <name>System 78</name>
+          <min>1.770</min>
+          <max>1.772</max>
+          <check>G</check>
+        </system>
+        <system>
+          <name>System 79</name>
+          <min>1.670</min>
+          <max>1.671</max>
+          <check>G</check>
+        </system>
+        <system>
+          <name>System 80</name>
+          <min>1.769</min>
+          <max>1.73</max>
+          <check>Out of Spec</check>
+        </system>
+        <system>
+          <name>System 81</name>
+          <min>1.745</min>
+          <max>1.750</max>
+          <check>G</check>
+        </system>
+      </systems>
+    </voltage>
+
+    <voltage value="16.0V">
+      <limits></limits>
+      <vsenses>
+        <vsense>
+          <name>VSense 1</name>
+          <min>15.996</min>
+          <max>16.032</max>
+          <check>G</check>
+        </vsense>
+        <vsense>
+          <name>VSense 2</name>
+          <min>16.017</min>
+          <max>16.113</max>
+          <check>G</check>
+        </vsense>
+      </vsenses>
+      <systems>
+        <system>
+          <name>System 76</name>
+          <min>2.263</min>
+          <max>2.265</max>
+          <check>G</check>
+        </system>
+        <system>
+          <name>System 77</name>
+          <min>2.2631</min>
+          <max>2.273</max>
+          <check>G</check>
+        </system>
+        <system>
+          <name>System 78</name>
+          <min>2.270</min>
+          <max>2.272</max>
+          <check>G</check>
+        </system>
+        <system>
+          <name>System 79</name>
+          <min>2.270</min>
+          <max>2.271</max>
+          <check>G</check>
+        </system>
+        <system>
+          <name>System 80</name>
+          <min>2.269</min>
+          <max>2.33</max>
+          <check>Out of Spec</check>
+        </system>
+        <system>
+          <name>System 81</name>
+          <min>2.245</min>
+          <max>2.250</max>
+          <check>G</check>
+        </system>
+      </systems>
+    </voltage>
+
+  </mode>
+
+  <mode id="Turn">
+
+    <voltage value="9.0V">
+      <limits></limits>
+      <vsenses>
+        <vsense>
+          <name>VSense 1</name>
+          <min>8.796</min>
+          <max>9.102</max>
+          <check>G</check>
+        </vsense>
+        <vsense>
+          <name>VSense 2</name>
+          <min>8.803</min>
+          <max>8.998</max>
+          <check>G</check>
+        </vsense>
+      </vsenses>
+      <systems>
+        <system>
+          <name>System 76</name>
+          <min>1.263</min>
+          <max>1.265</max>
+          <check>G</check>
+        </system>
+        <system>
+          <name>System 77</name>
+          <min>1.2631</min>
+          <max>1.273</max>
+          <check>G</check>
+        </system>
+        <system>
+          <name>System 78</name>
+          <min>1.270</min>
+          <max>1.272</max>
+          <check>G</check>
+        </system>
+        <system>
+          <name>System 79</name>
+          <min>1.270</min>
+          <max>1.271</max>
+          <check>G</check>
+        </system>
+        <system>
+          <name>System 80</name>
+          <min>1.269</min>
+          <max>1.33</max>
+          <check>Out of Spec</check>
+        </system>
+        <system>
+          <name>System 81</name>
+          <min>1.245</min>
+          <max>1.250</max>
+          <check>G</check>
+        </system>
+      </systems>
+    </voltage>
+
+    <voltage value="14.1V">
+      <limits></limits>
+      <vsenses>
+        <vsense>
+          <name>VSense 1</name>
+          <min>13.996</min>
+          <max>14.102</max>
+          <check>G</check>
+        </vsense>
+        <vsense>
+          <name>VSense 2</name>
+          <min>13.993</min>
+          <max>14.201</max>
+          <check>G</check>
+        </vsense>
+      </vsenses>
+      <systems>
+        <system>
+          <name>System 76</name>
+          <min>1.763</min>
+          <max>1.765</max>
+          <check>G</check>
+        </system>
+        <system>
+          <name>System 77</name>
+          <min>1.6631</min>
+          <max>1.673</max>
+          <check>G</check>
+        </system>
+        <system>
+          <name>System 78</name>
+          <min>1.770</min>
+          <max>1.772</max>
+          <check>G</check>
+        </system>
+        <system>
+          <name>System 79</name>
+          <min>1.670</min>
+          <max>1.671</max>
+          <check>G</check>
+        </system>
+        <system>
+          <name>System 80</name>
+          <min>1.769</min>
+          <max>1.73</max>
+          <check>Out of Spec</check>
+        </system>
+        <system>
+          <name>System 81</name>
+          <min>1.745</min>
+          <max>1.750</max>
+          <check>G</check>
+        </system>
+      </systems>
+    </voltage>
+
+    <voltage value="16.0V">
+      <limits></limits>
+      <vsenses>
+        <vsense>
+          <name>VSense 1</name>
+          <min>15.996</min>
+          <max>16.032</max>
+          <check>G</check>
+        </vsense>
+        <vsense>
+          <name>VSense 2</name>
+          <min>16.017</min>
+          <max>16.113</max>
+          <check>G</check>
+        </vsense>
+      </vsenses>
+      <systems>
+        <system>
+          <name>System 76</name>
+          <min>2.263</min>
+          <max>2.265</max>
+          <check>G</check>
+        </system>
+        <system>
+          <name>System 77</name>
+          <min>2.2631</min>
+          <max>2.273</max>
+          <check>G</check>
+        </system>
+        <system>
+          <name>System 78</name>
+          <min>2.270</min>
+          <max>2.272</max>
+          <check>G</check>
+        </system>
+        <system>
+          <name>System 79</name>
+          <min>2.270</min>
+          <max>2.271</max>
+          <check>G</check>
+        </system>
+        <system>
+          <name>System 80</name>
+          <min>2.269</min>
+          <max>2.33</max>
+          <check>Out of Spec</check>
+        </system>
+        <system>
+          <name>System 81</name>
+          <min>2.245</min>
+          <max>2.250</max>
+          <check>G</check>
+        </system>
+      </systems>
+    </voltage>
+
+  </mode>
+  
+
+  <mode id="Park">
+
+    <voltage value="9.0V">
+      <limits></limits>
+      <vsenses>
+        <vsense>
+          <name>VSense 1</name>
+          <min>8.796</min>
+          <max>9.102</max>
+          <check>G</check>
+        </vsense>
+        <vsense>
+          <name>VSense 2</name>
+          <min>8.803</min>
+          <max>8.998</max>
+          <check>G</check>
+        </vsense>
+      </vsenses>
+      <systems>
+        <system>
+          <name>System 76</name>
+          <min>1.263</min>
+          <max>1.265</max>
+          <check>G</check>
+        </system>
+        <system>
+          <name>System 77</name>
+          <min>1.2631</min>
+          <max>1.273</max>
+          <check>G</check>
+        </system>
+        <system>
+          <name>System 78</name>
+          <min>1.270</min>
+          <max>1.272</max>
+          <check>G</check>
+        </system>
+        <system>
+          <name>System 79</name>
+          <min>1.270</min>
+          <max>1.271</max>
+          <check>G</check>
+        </system>
+        <system>
+          <name>System 80</name>
+          <min>1.269</min>
+          <max>1.33</max>
+          <check>Out of Spec</check>
+        </system>
+        <system>
+          <name>System 81</name>
+          <min>1.245</min>
+          <max>1.250</max>
+          <check>G</check>
+        </system>
+      </systems>
+    </voltage>
+
+    <voltage value="14.1V">
+      <limits></limits>
+      <vsenses>
+        <vsense>
+          <name>VSense 1</name>
+          <min>13.996</min>
+          <max>14.102</max>
+          <check>G</check>
+        </vsense>
+        <vsense>
+          <name>VSense 2</name>
+          <min>13.993</min>
+          <max>14.201</max>
+          <check>G</check>
+        </vsense>
+      </vsenses>
+      <systems>
+        <system>
+          <name>System 76</name>
+          <min>1.763</min>
+          <max>1.765</max>
+          <check>G</check>
+        </system>
+        <system>
+          <name>System 77</name>
+          <min>1.6631</min>
+          <max>1.673</max>
+          <check>G</check>
+        </system>
+        <system>
+          <name>System 78</name>
+          <min>1.770</min>
+          <max>1.772</max>
+          <check>G</check>
+        </system>
+        <system>
+          <name>System 79</name>
+          <min>1.670</min>
+          <max>1.671</max>
+          <check>G</check>
+        </system>
+        <system>
+          <name>System 80</name>
+          <min>1.769</min>
+          <max>1.73</max>
+          <check>Out of Spec</check>
+        </system>
+        <system>
+          <name>System 81</name>
+          <min>1.745</min>
+          <max>1.750</max>
+          <check>G</check>
+        </system>
+      </systems>
+    </voltage>
+
+    <voltage value="16.0V">
+      <limits></limits>
+      <vsenses>
+        <vsense>
+          <name>VSense 1</name>
+          <min>15.996</min>
+          <max>16.032</max>
+          <check>G</check>
+        </vsense>
+        <vsense>
+          <name>VSense 2</name>
+          <min>16.017</min>
+          <max>16.113</max>
+          <check>G</check>
+        </vsense>
+      </vsenses>
+      <systems>
+        <system>
+          <name>System 76</name>
+          <min>2.263</min>
+          <max>2.265</max>
+          <check>G</check>
+        </system>
+        <system>
+          <name>System 77</name>
+          <min>2.2631</min>
+          <max>2.273</max>
+          <check>G</check>
+        </system>
+        <system>
+          <name>System 78</name>
+          <min>2.270</min>
+          <max>2.272</max>
+          <check>G</check>
+        </system>
+        <system>
+          <name>System 79</name>
+          <min>2.270</min>
+          <max>2.271</max>
+          <check>G</check>
+        </system>
+        <system>
+          <name>System 80</name>
+          <min>2.269</min>
+          <max>2.33</max>
+          <check>Out of Spec</check>
+        </system>
+        <system>
+          <name>System 81</name>
+          <min>2.245</min>
+          <max>2.250</max>
+          <check>G</check>
+        </system>
+      </systems>
+    </voltage>
+
+  </mode>
+  
+</temperature>  
+
+<!-- NEW TEMPERATURE  -->
+  
+<temperature temp="-40C">
+
+  <mode id="DRL">
+
+    <voltage value="9.0V">
+      <limits></limits>
+      <vsenses>
+        <vsense>
+          <name>VSense 1</name>
+          <min>8.796</min>
+          <max>9.102</max>
+          <check>G</check>
+        </vsense>
+        <vsense>
+          <name>VSense 2</name>
+          <min>8.803</min>
+          <max>8.998</max>
+          <check>G</check>
+        </vsense>
+      </vsenses>
+      <systems>
+        <system>
+          <name>System 76</name>
+          <min>1.263</min>
+          <max>1.265</max>
+          <check>G</check>
+        </system>
+        <system>
+          <name>System 77</name>
+          <min>1.2631</min>
+          <max>1.273</max>
+          <check>G</check>
+        </system>
+        <system>
+          <name>System 78</name>
+          <min>1.270</min>
+          <max>1.272</max>
+          <check>G</check>
+        </system>
+        <system>
+          <name>System 79</name>
+          <min>1.270</min>
+          <max>1.271</max>
+          <check>G</check>
+        </system>
+        <system>
+          <name>System 80</name>
+          <min>1.269</min>
+          <max>1.33</max>
+          <check>Out of Spec</check>
+        </system>
+        <system>
+          <name>System 81</name>
+          <min>1.245</min>
+          <max>1.250</max>
+          <check>G</check>
+        </system>
+      </systems>
+    </voltage>
+
+    <voltage value="14.1V">
+      <limits></limits>
+      <vsenses>
+        <vsense>
+          <name>VSense 1</name>
+          <min>13.996</min>
+          <max>14.102</max>
+          <check>G</check>
+        </vsense>
+        <vsense>
+          <name>VSense 2</name>
+          <min>13.993</min>
+          <max>14.201</max>
+          <check>G</check>
+        </vsense>
+      </vsenses>
+      <systems>
+        <system>
+          <name>System 76</name>
+          <min>1.763</min>
+          <max>1.765</max>
+          <check>G</check>
+        </system>
+        <system>
+          <name>System 77</name>
+          <min>1.6631</min>
+          <max>1.673</max>
+          <check>G</check>
+        </system>
+        <system>
+          <name>System 78</name>
+          <min>1.770</min>
+          <max>1.772</max>
+          <check>G</check>
+        </system>
+        <system>
+          <name>System 79</name>
+          <min>1.670</min>
+          <max>1.671</max>
+          <check>G</check>
+        </system>
+        <system>
+          <name>System 80</name>
+          <min>1.769</min>
+          <max>1.73</max>
+          <check>Out of Spec</check>
+        </system>
+        <system>
+          <name>System 81</name>
+          <min>1.745</min>
+          <max>1.750</max>
+          <check>G</check>
+        </system>
+      </systems>
+    </voltage>
+
+    <voltage value="16.0V">
+      <limits></limits>
+      <vsenses>
+        <vsense>
+          <name>VSense 1</name>
+          <min>15.996</min>
+          <max>16.032</max>
+          <check>G</check>
+        </vsense>
+        <vsense>
+          <name>VSense 2</name>
+          <min>16.017</min>
+          <max>16.113</max>
+          <check>G</check>
+        </vsense>
+      </vsenses>
+      <systems>
+        <system>
+          <name>System 76</name>
+          <min>2.263</min>
+          <max>2.265</max>
+          <check>G</check>
+        </system>
+        <system>
+          <name>System 77</name>
+          <min>2.2631</min>
+          <max>2.273</max>
+          <check>G</check>
+        </system>
+        <system>
+          <name>System 78</name>
+          <min>2.270</min>
+          <max>2.272</max>
+          <check>G</check>
+        </system>
+        <system>
+          <name>System 79</name>
+          <min>2.270</min>
+          <max>2.271</max>
+          <check>G</check>
+        </system>
+        <system>
+          <name>System 80</name>
+          <min>2.269</min>
+          <max>2.33</max>
+          <check>Out of Spec</check>
+        </system>
+        <system>
+          <name>System 81</name>
+          <min>2.245</min>
+          <max>2.250</max>
+          <check>G</check>
+        </system>
+      </systems>
+    </voltage>
+
+  </mode>
+
+  <mode id="Turn">
+
+    <voltage value="9.0V">
+      <limits></limits>
+      <vsenses>
+        <vsense>
+          <name>VSense 1</name>
+          <min>8.796</min>
+          <max>9.102</max>
+          <check>G</check>
+        </vsense>
+        <vsense>
+          <name>VSense 2</name>
+          <min>8.803</min>
+          <max>8.998</max>
+          <check>G</check>
+        </vsense>
+      </vsenses>
+      <systems>
+        <system>
+          <name>System 76</name>
+          <min>1.263</min>
+          <max>1.265</max>
+          <check>G</check>
+        </system>
+        <system>
+          <name>System 77</name>
+          <min>1.2631</min>
+          <max>1.273</max>
+          <check>G</check>
+        </system>
+        <system>
+          <name>System 78</name>
+          <min>1.270</min>
+          <max>1.272</max>
+          <check>G</check>
+        </system>
+        <system>
+          <name>System 79</name>
+          <min>1.270</min>
+          <max>1.271</max>
+          <check>G</check>
+        </system>
+        <system>
+          <name>System 80</name>
+          <min>1.269</min>
+          <max>1.33</max>
+          <check>Out of Spec</check>
+        </system>
+        <system>
+          <name>System 81</name>
+          <min>1.245</min>
+          <max>1.250</max>
+          <check>G</check>
+        </system>
+      </systems>
+    </voltage>
+
+    <voltage value="14.1V">
+      <limits></limits>
+      <vsenses>
+        <vsense>
+          <name>VSense 1</name>
+          <min>13.996</min>
+          <max>14.102</max>
+          <check>G</check>
+        </vsense>
+        <vsense>
+          <name>VSense 2</name>
+          <min>13.993</min>
+          <max>14.201</max>
+          <check>G</check>
+        </vsense>
+      </vsenses>
+      <systems>
+        <system>
+          <name>System 76</name>
+          <min>1.763</min>
+          <max>1.765</max>
+          <check>G</check>
+        </system>
+        <system>
+          <name>System 77</name>
+          <min>1.6631</min>
+          <max>1.673</max>
+          <check>G</check>
+        </system>
+        <system>
+          <name>System 78</name>
+          <min>1.770</min>
+          <max>1.772</max>
+          <check>G</check>
+        </system>
+        <system>
+          <name>System 79</name>
+          <min>1.670</min>
+          <max>1.671</max>
+          <check>G</check>
+        </system>
+        <system>
+          <name>System 80</name>
+          <min>1.769</min>
+          <max>1.73</max>
+          <check>Out of Spec</check>
+        </system>
+        <system>
+          <name>System 81</name>
+          <min>1.745</min>
+          <max>1.750</max>
+          <check>G</check>
+        </system>
+      </systems>
+    </voltage>
+
+    <voltage value="16.0V">
+      <limits></limits>
+      <vsenses>
+        <vsense>
+          <name>VSense 1</name>
+          <min>15.996</min>
+          <max>16.032</max>
+          <check>G</check>
+        </vsense>
+        <vsense>
+          <name>VSense 2</name>
+          <min>16.017</min>
+          <max>16.113</max>
+          <check>G</check>
+        </vsense>
+      </vsenses>
+      <systems>
+        <system>
+          <name>System 76</name>
+          <min>2.263</min>
+          <max>2.265</max>
+          <check>G</check>
+        </system>
+        <system>
+          <name>System 77</name>
+          <min>2.2631</min>
+          <max>2.273</max>
+          <check>G</check>
+        </system>
+        <system>
+          <name>System 78</name>
+          <min>2.270</min>
+          <max>2.272</max>
+          <check>G</check>
+        </system>
+        <system>
+          <name>System 79</name>
+          <min>2.270</min>
+          <max>2.271</max>
+          <check>G</check>
+        </system>
+        <system>
+          <name>System 80</name>
+          <min>2.269</min>
+          <max>2.33</max>
+          <check>Out of Spec</check>
+        </system>
+        <system>
+          <name>System 81</name>
+          <min>2.245</min>
+          <max>2.250</max>
+          <check>G</check>
+        </system>
+      </systems>
+    </voltage>
+
+  </mode>
+  
+
+  <mode id="Park">
+
+    <voltage value="9.0V">
+      <limits></limits>
+      <vsenses>
+        <vsense>
+          <name>VSense 1</name>
+          <min>8.796</min>
+          <max>9.102</max>
+          <check>G</check>
+        </vsense>
+        <vsense>
+          <name>VSense 2</name>
+          <min>8.803</min>
+          <max>8.998</max>
+          <check>G</check>
+        </vsense>
+      </vsenses>
+      <systems>
+        <system>
+          <name>System 76</name>
+          <min>1.263</min>
+          <max>1.265</max>
+          <check>G</check>
+        </system>
+        <system>
+          <name>System 77</name>
+          <min>1.2631</min>
+          <max>1.273</max>
+          <check>G</check>
+        </system>
+        <system>
+          <name>System 78</name>
+          <min>1.270</min>
+          <max>1.272</max>
+          <check>G</check>
+        </system>
+        <system>
+          <name>System 79</name>
+          <min>1.270</min>
+          <max>1.271</max>
+          <check>G</check>
+        </system>
+        <system>
+          <name>System 80</name>
+          <min>1.269</min>
+          <max>1.33</max>
+          <check>Out of Spec</check>
+        </system>
+        <system>
+          <name>System 81</name>
+          <min>1.245</min>
+          <max>1.250</max>
+          <check>G</check>
+        </system>
+      </systems>
+    </voltage>
+
+    <voltage value="14.1V">
+      <limits></limits>
+      <vsenses>
+        <vsense>
+          <name>VSense 1</name>
+          <min>13.996</min>
+          <max>14.102</max>
+          <check>G</check>
+        </vsense>
+        <vsense>
+          <name>VSense 2</name>
+          <min>13.993</min>
+          <max>14.201</max>
+          <check>G</check>
+        </vsense>
+      </vsenses>
+      <systems>
+        <system>
+          <name>System 76</name>
+          <min>1.763</min>
+          <max>1.765</max>
+          <check>G</check>
+        </system>
+        <system>
+          <name>System 77</name>
+          <min>1.6631</min>
+          <max>1.673</max>
+          <check>G</check>
+        </system>
+        <system>
+          <name>System 78</name>
+          <min>1.770</min>
+          <max>1.772</max>
+          <check>G</check>
+        </system>
+        <system>
+          <name>System 79</name>
+          <min>1.670</min>
+          <max>1.671</max>
+          <check>G</check>
+        </system>
+        <system>
+          <name>System 80</name>
+          <min>1.769</min>
+          <max>1.73</max>
+          <check>Out of Spec</check>
+        </system>
+        <system>
+          <name>System 81</name>
+          <min>1.745</min>
+          <max>1.750</max>
+          <check>G</check>
+        </system>
+      </systems>
+    </voltage>
+
+    <voltage value="16.0V">
+      <limits></limits>
+      <vsenses>
+        <vsense>
+          <name>VSense 1</name>
+          <min>15.996</min>
+          <max>16.032</max>
+          <check>G</check>
+        </vsense>
+        <vsense>
+          <name>VSense 2</name>
+          <min>16.017</min>
+          <max>16.113</max>
+          <check>G</check>
+        </vsense>
+      </vsenses>
+      <systems>
+        <system>
+          <name>System 76</name>
+          <min>2.263</min>
+          <max>2.265</max>
+          <check>G</check>
+        </system>
+        <system>
+          <name>System 77</name>
+          <min>2.2631</min>
+          <max>2.273</max>
+          <check>G</check>
+        </system>
+        <system>
+          <name>System 78</name>
+          <min>2.270</min>
+          <max>2.272</max>
+          <check>G</check>
+        </system>
+        <system>
+          <name>System 79</name>
+          <min>2.270</min>
+          <max>2.271</max>
+          <check>G</check>
+        </system>
+        <system>
+          <name>System 80</name>
+          <min>2.269</min>
+          <max>2.33</max>
+          <check>Out of Spec</check>
+        </system>
+        <system>
+          <name>System 81</name>
+          <min>2.245</min>
+          <max>2.250</max>
+          <check>G</check>
+        </system>
+      </systems>
+    </voltage>
+
+  </mode>
+  
+</temperature>  
+  
+</test>
