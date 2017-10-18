@@ -18,8 +18,8 @@ const saveChanges = () => {
     table.className = 'temp-table ' + 'temp' + header.innerHTML;
   });
 
-  console.log("clicked Save");
-  document.getElementById('save').href = window.location.href; // save as dialog window
+  window.alert("Settings updated. You still need to save (ctrl+s) the file. Save as webpage complete.");
+  // document.getElementById('save').href = window.location.href; // save as dialog window
 };
 
 // Voltage

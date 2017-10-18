@@ -6,6 +6,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
   <html>
     <head>
       <style>
+        /* Basic HTML Elements*/
         body {
           font-family: Calibri, Tahoma, Verdana, Segoe, sans-serif;
           text-align: center;
@@ -32,6 +33,8 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
           background-color: lightyellow;
         }
 
+
+        /* Modes */
         .mode-header {
           margin: 10px 10px;
           width: 100%;
@@ -59,6 +62,8 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
           background-color: #ff96ca;
         }
 
+
+        /* Temperatures */
         .color23C {
           background-color: palegreen;
         }
@@ -83,6 +88,8 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
           background-color: #bb5d00;
         }
 
+
+        /* Layout Styling */
         .info {
           display: flex;
           justify-content: center;
@@ -119,15 +126,19 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
           margin-right: 10px;
         }
 
-        .board-table {
-          border: 1px solid black;
-        }
-
-        .board-table tr:nth-child(odd){
+        .board-table tr:nth-child(odd) {
           background-color: #ccc;
         }
 
-        button.save-button {
+        table tr.board-change td {
+          border: none;
+          border-width: 0;
+          background-color: white;
+        }
+
+
+        /* Buttons */
+        a.save-button {
           font-size: 1.2em;
           margin: 10px;
         }
@@ -162,6 +173,8 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
             header.className = 'temp-table-header ' + 'color'+header.innerHTML;
             table.className = 'temp-table ' + 'temp'+header.innerHTML;
           });
+
+          window.alert("Settings updated. You still need to save (ctrl+s) the file. Save as webpage complete.");
         };
 
         // Voltage
@@ -255,15 +268,43 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
             saveChanges();
           }
         };
+
+        // Board
+        const addBoard = () => {
+          let boardTable = document.getElementById('board-table');
+          let newBoardNumber = getNewBoardNumber(boardTable.rows[boardTable.rows.length-2]);
+          let newRow = boardTable.insertRow(boardTable.rows.length-1);
+          newRow.className = "board";
+          newRow.id = 'B' + newBoardNumber;
+          let cell1 = newRow.insertCell(0);
+          let cell2 = newRow.insertCell(1);
+          let cell3 = newRow.insertCell(2);
+          let cell4 = newRow.insertCell(3);
+          cell1.innerHTML = 'B' + newBoardNumber;
+          cell2.innerHTML = "Module";
+          cell3.innerHTML = "";
+          cell4.innerHTML = "False";
+        };
+
+        const getNewBoardNumber = (lastBoard) => {
+          return parseInt(lastBoard.id.slice(1, lastBoard.id.length)) + 1;
+        };
+
+        const removeBoard = () => {
+          let boardTable = document.getElementById('board-table');
+          let lastBoard = boardTable.rows[boardTable.rows.length-2];
+          (boardTable.rows.length > 5) &amp;&amp; lastBoard.parentNode.removeChild(lastBoard);
+        };
       </script>
     </head>
 
     <body>
+      <div>
+        <a href="#" id="save" class="save-button" onClick="saveChanges()">Save Changes</a>
+      </div>
+
       <div id="content" contenteditable="true">
 
-        <div>
-          <button class="save-button" onClick="saveChanges()">Save Changes</button>
-        </div>
 
         <h1><u>TEST STATION LIMITS</u></h1>
         <div class="info">
@@ -277,7 +318,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
           <!-- Board Module Information -->
           <div class="top-container board-info">
-            <table class="board-table">
+            <table class="board-table" id="board-table">
               <tr>
                 <th>Board</th>
                 <th>Module</th>
@@ -293,6 +334,14 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                   <td><xsl:value-of select="outage"/></td>
                 </tr>
               </xsl:for-each>
+              <tr class="board-change">
+                <td colspan="2">
+                  <button onClick="addBoard()">(+) Add Board</button>
+                </td>
+                <td colspan="2">
+                  <button onClick="removeBoard()">(-) Remove Board</button>
+                </td>
+              </tr>
             </table>
           </div>
 
