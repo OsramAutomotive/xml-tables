@@ -25,8 +25,16 @@ const saveChanges = () => {
 // Voltage
 const addVoltage = () => {
   let voltageValue = prompt("Enter the value of the voltage:", "13.5");
-  let rowIndex = compareVoltage(voltageValue, document.querySelectorAll('.temp-table')[0]);
-  if (voltageValue != null) {
+  let firstTable = document.querySelectorAll('.temp-table')[0];
+  let rowIndex = compareVoltage(voltageValue, firstTable);
+  const voltagesPresent = [for (n of firstTable.querySelectorAll('#voltage')) parseFloat(n.className)];
+
+  if (voltageValue == null) { 
+  } else if (isNaN(parseFloat(voltageValue))) {
+    alert("Not a valid voltage entry.");
+  } else if (voltagesPresent.includes(parseFloat(voltageValue))) {
+    alert("The voltage entered is already present.");
+  } else {
     document.querySelectorAll('.temp-table').forEach(table => {
       let row = table.insertRow(rowIndex);
       row.id = "voltage";
@@ -66,11 +74,23 @@ const removeVoltage = () => {
 // Temperature
 const addTemp = () => {
   let temperature = prompt("Enter the temperature:", "95C");
-  if (temperature != null) {
+  let tempTables = document.querySelectorAll('.mode-tables')[0].querySelectorAll('.temp-table');
+  const regex = /[^0-9-.]/g;
+  const temperaturesPresent = [for (t of tempTables) parseFloat(t.getAttribute('temperature').replace(regex, ''))];
+  console.log('Entered: ' + parseFloat(temperature));
+  console.log('Present: ' + temperaturesPresent);
+
+  if (temperature == null) {
+  } else if (isNaN(parseFloat(temperature))) {
+    alert(temperature + ' is not a valid temperature entry.');
+  } else if (temperaturesPresent.includes(parseFloat(temperature))) {
+    alert(temperature + ' is already present.');
+  } else {
     let tablesDivs = document.querySelectorAll('.mode-tables');
     tablesDivs.forEach(tablesDiv => {
       let tables = tablesDiv.children;
       let newTable = tables[0].cloneNode(true);
+      newTable.setAttribute('temperature', temperature);
       newTable.getElementsByClassName('temp-table-header')[0].innerHTML = temperature;
       tablesDiv.appendChild(newTable);
     });
@@ -92,7 +112,15 @@ const removeTemp = () => {
 // Mode
 const addMode = () => {
   let modeName = prompt("Enter the name of the mode:", "MODE");
-  if (modeName != null) {
+  let modeNameList = [];
+  let modes = document.querySelectorAll('.mode');
+  modes.forEach(mode => modeNameList.push(mode.id.toLowerCase()));
+  if (modeName == null) {
+  } else if (modeName.replace(/\s/g, '') == '') { 
+    alert(modeName + ' is not a valid entry for a mode.');
+  } else if (modeNameList.includes(modeName.toLowerCase())) {
+    alert(modeName + ' is already present.');
+  } else {
     let modesDiv = document.getElementById('modes');
     let newMode = modesDiv.lastChild.cloneNode(true);
     modesDiv.appendChild(newMode);

@@ -92,6 +92,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
               <xsl:for-each select="temperature">
                 <table>
                   <xsl:attribute name="class">temp-table temp<xsl:value-of select="@value"/></xsl:attribute>
+                  <xsl:attribute name="temperature"><xsl:value-of select="@value"/></xsl:attribute>
                   <tr>
                     <th colspan="3">
                       <xsl:attribute name="class">temp-table-header color<xsl:value-of select="@value"/></xsl:attribute>
