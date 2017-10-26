@@ -28,28 +28,32 @@ const addVoltage = () => {
   let firstTable = document.querySelectorAll('.temp-table')[0];
   let rowIndex = compareVoltage(voltageValue, firstTable);
   const voltagesPresent = [for (n of firstTable.querySelectorAll('#voltage')) parseFloat(n.className)];
+  const error = handleAddVoltage(voltageValue, voltagesPresent, rowIndex);
+  error && alert(error);
+};
 
-  if (voltageValue == null) { 
+const handleAddVoltage = (voltageValue, voltagesPresent, rowIndex) => {
+  if (!voltageValue) {
+    return
   } else if (isNaN(parseFloat(voltageValue))) {
-    alert("Not a valid voltage entry.");
+    return '"' + voltageValue + '"' + " is not a valid voltage entry.";
   } else if (voltagesPresent.includes(parseFloat(voltageValue))) {
-    alert("The voltage entered is already present.");
-  } else {
-    document.querySelectorAll('.temp-table').forEach(table => {
-      let row = table.insertRow(rowIndex);
-      row.id = "voltage";
-      let voltage = document.createElement('th');
-      row.appendChild(voltage);
-      let minimum = row.insertCell(1);
-      let maximum = row.insertCell(2);
-      minimum.className = "min";
-      maximum.className = "max";
-      voltage.innerHTML = voltageValue;
-      minimum.innerHTML = "1.00";
-      maximum.innerHTML = "2.00";
-    });
-    saveChanges();
+    return '"' + voltageValue + '"' + " is already present.";
   }
+  document.querySelectorAll('.temp-table').forEach(table => {
+    let row = table.insertRow(rowIndex);
+    row.id = "voltage";
+    let voltage = document.createElement('th');
+    row.appendChild(voltage);
+    let minimum = row.insertCell(1);
+    let maximum = row.insertCell(2);
+    minimum.className = "min";
+    maximum.className = "max";
+    voltage.innerHTML = voltageValue;
+    minimum.innerHTML = "1.00";
+    maximum.innerHTML = "2.00";
+  });
+  saveChanges();
 };
 
 const compareVoltage = (value, table) => {
@@ -79,28 +83,32 @@ const addTemp = () => {
   const temperaturesPresent = [for (t of tempTables) parseFloat(t.getAttribute('temperature').replace(regex, ''))];
   console.log('Entered: ' + parseFloat(temperature));
   console.log('Present: ' + temperaturesPresent);
+  const error = handleAddTemp(temperature, temperaturesPresent);
+  error && alert(error);
+};
 
-  if (temperature == null) {
+const handleAddTemp = (temperature, temperaturesPresent) => {
+  if (!temperature) {
+    return
   } else if (isNaN(parseFloat(temperature))) {
-    alert(temperature + ' is not a valid temperature entry.');
+    return '"' + temperature + '"' + ' is not a valid temperature entry.';
   } else if (temperaturesPresent.includes(parseFloat(temperature))) {
-    alert(temperature + ' is already present.');
-  } else {
-    let tablesDivs = document.querySelectorAll('.mode-tables');
-    tablesDivs.forEach(tablesDiv => {
-      let tables = tablesDiv.children;
-      let newTable = tables[0].cloneNode(true);
-      newTable.setAttribute('temperature', temperature);
-      newTable.getElementsByClassName('temp-table-header')[0].innerHTML = temperature;
-      tablesDiv.appendChild(newTable);
-    });
-    saveChanges();
-  }
+    return '"' + temperature + '"' + ' is already present.';
+  } 
+  let tablesDivs = document.querySelectorAll('.mode-tables');
+  tablesDivs.forEach(tablesDiv => {
+    let tables = tablesDiv.children;
+    let newTable = tables[0].cloneNode(true);
+    newTable.setAttribute('temperature', temperature);
+    newTable.getElementsByClassName('temp-table-header')[0].innerHTML = temperature;
+    tablesDiv.appendChild(newTable);
+  });
+  saveChanges();
 };
 
 const removeTemp = () => {
   let temperature = prompt("Enter the temperature to remove:", "95C");
-  if (temperature != null) {
+  if (temperature) {
     let tablesToRemove = document.querySelectorAll('.temp-table.temp'+temperature);
     tablesToRemove.forEach(table => {
       table.parentNode.removeChild(table);
@@ -112,22 +120,26 @@ const removeTemp = () => {
 // Mode
 const addMode = () => {
   let modeName = prompt("Enter the name of the mode:", "MODE");
-  let modeNameList = [];
   let modes = document.querySelectorAll('.mode');
-  modes.forEach(mode => modeNameList.push(mode.id.toLowerCase()));
-  if (modeName == null) {
+  let modeNamesPresent = [for (mode of modes) mode.id.toLowerCase];
+  const error = handleAddMode(modeName, modeNamesPresent);
+  error && alert(error);
+};
+
+const handleAddMode = (modeName, modeNamesPresent) => {
+  if (!modeName) {
+    return
   } else if (modeName.replace(/\s/g, '') == '') { 
-    alert(modeName + ' is not a valid entry for a mode.');
-  } else if (modeNameList.includes(modeName.toLowerCase())) {
-    alert(modeName + ' is already present.');
-  } else {
-    let modesDiv = document.getElementById('modes');
-    let newMode = modesDiv.lastChild.cloneNode(true);
-    modesDiv.appendChild(newMode);
-    newMode.children[0].innerHTML = modeName;
-    saveChanges();
-    window.scrollTo(0,document.body.scrollHeight);
-  }
+    return '"' + modeName + '"' + ' is not a valid entry for a mode.';
+  } else if (modeNamesPresent.includes(modeName.toLowerCase())) {
+    return '"' + modeName + '"' + ' is already present.';
+  } 
+  let modesDiv = document.getElementById('modes');
+  let newMode = modesDiv.lastChild.cloneNode(true);
+  modesDiv.appendChild(newMode);
+  newMode.children[0].innerHTML = modeName;
+  saveChanges();
+  window.scrollTo(0,document.body.scrollHeight);
 };
 
 const removeMode = () => {
