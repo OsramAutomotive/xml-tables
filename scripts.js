@@ -83,8 +83,6 @@ const addTemp = () => {
   let tempTables = document.querySelectorAll('.mode-tables')[0].querySelectorAll('.temp-table');
   const regex = /[^0-9-.]/g;
   const temperaturesPresent = [for (t of tempTables) parseFloat(t.getAttribute('temperature').replace(regex, ''))];
-  console.log('Entered: ' + parseFloat(temperature));
-  console.log('Present: ' + temperaturesPresent);
   const error = handleAddTemp(temperature, temperaturesPresent);
   error && alert(error);
 };
@@ -102,10 +100,25 @@ const handleAddTemp = (temperature, temperaturesPresent) => {
     let tables = tablesDiv.children;
     let newTable = tables[0].cloneNode(true);
     newTable.setAttribute('temperature', temperature);
-    newTable.getElementsByClassName('temp-table-header')[0].innerHTML = temperature;
+    newTable.className = 'temp-table ' + 'temp' + temperature;
+    let header = newTable.getElementsByClassName('temp-table-header')[0];
+    header.innerHTML = temperature;
+    header.className = 'temp-table-header ' + 'color' + temperature;
     tablesDiv.appendChild(newTable);
+    tables = tablesDiv.children;
+    sortTempTables(tablesDiv, tables);
   });
   saveChanges();
+};
+
+const sortTempTables = (tablesDiv, tables) => {
+  // sorted by temperature ascending
+  let tablesArray = Array.prototype.slice.call(tables, 0);
+  tablesArray.sort((a, b) => {
+    return parseFloat(a.getAttribute('temperature')) - parseFloat(b.getAttribute('temperature'));
+  });
+  tablesDiv.innerHTML = "";
+  tablesArray.forEach(table => tablesDiv.appendChild(table));
 };
 
 const removeTemp = () => {
