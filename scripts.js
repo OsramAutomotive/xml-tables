@@ -1,4 +1,4 @@
-// Save changes into new limits file
+// Save changes (update classNames, ids, attributes, etc.)
 const saveChanges = () => {
   document.querySelectorAll('.mode').forEach(mode => {
     let header = mode.childNodes[0];
@@ -22,6 +22,7 @@ const saveChanges = () => {
   // document.getElementById('save').href = window.location.href; // save as dialog window
 };
 
+
 // Voltage
 const addVoltage = () => {
   let voltageValue = prompt("Enter the value of the voltage:", "13.5");
@@ -34,7 +35,7 @@ const addVoltage = () => {
 
 const handleAddVoltage = (voltageValue, voltagesPresent, rowIndex) => {
   if (!voltageValue) {
-    return
+    return;
   } else if (isNaN(parseFloat(voltageValue))) {
     return '"' + voltageValue + '"' + " is not a valid voltage entry.";
   } else if (voltagesPresent.includes(parseFloat(voltageValue))) {
@@ -67,13 +68,14 @@ const compareVoltage = (value, table) => {
 
 const removeVoltage = () => {
   let voltage = prompt("Enter voltage to remove:", "13.5");
-  if (voltage != null) {
+  if (voltage) {
     document.querySelectorAll('#voltage').forEach(tr => {
       (tr.className == voltage) && tr.parentNode.removeChild(tr);
     });
     saveChanges();
   }
 };
+
 
 // Temperature
 const addTemp = () => {
@@ -89,12 +91,12 @@ const addTemp = () => {
 
 const handleAddTemp = (temperature, temperaturesPresent) => {
   if (!temperature) {
-    return
+    return;
   } else if (isNaN(parseFloat(temperature))) {
     return '"' + temperature + '"' + ' is not a valid temperature entry.';
   } else if (temperaturesPresent.includes(parseFloat(temperature))) {
     return '"' + temperature + '"' + ' is already present.';
-  } 
+  }
   let tablesDivs = document.querySelectorAll('.mode-tables');
   tablesDivs.forEach(tablesDiv => {
     let tables = tablesDiv.children;
@@ -117,18 +119,20 @@ const removeTemp = () => {
   }
 };
 
+
 // Mode
 const addMode = () => {
   let modeName = prompt("Enter the name of the mode:", "MODE");
   let modes = document.querySelectorAll('.mode');
-  let modeNamesPresent = [for (mode of modes) mode.id.toLowerCase];
+  let modeNamesPresent = [for (mode of modes) mode.id.toLowerCase()];
+  console.log(modeName, modeNamesPresent);
   const error = handleAddMode(modeName, modeNamesPresent);
   error && alert(error);
 };
 
 const handleAddMode = (modeName, modeNamesPresent) => {
   if (!modeName) {
-    return
+    return;
   } else if (modeName.replace(/\s/g, '') == '') { 
     return '"' + modeName + '"' + ' is not a valid entry for a mode.';
   } else if (modeNamesPresent.includes(modeName.toLowerCase())) {
@@ -144,13 +148,14 @@ const handleAddMode = (modeName, modeNamesPresent) => {
 
 const removeMode = () => {
   let modeName = prompt("Enter the mode to remove:", "LBHB");
-  if (modeName != null) {
+  if (modeName) {
     let mode = document.getElementById(modeName);
     mode.scrollIntoView();
     mode.parentNode.removeChild(mode);
     saveChanges();
   }
 };
+
 
 // Board
 const addBoard = () => {
