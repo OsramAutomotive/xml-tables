@@ -128,7 +128,60 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
             </div><!-- end mode -->
           </xsl:for-each>
         </div><!-- end modes -->
-      </div><!-- end limits  -->
+
+        <!-- Outage Table -->
+        <h2 class="outage-header">OUTAGE</h2>
+        <div id="outage" class="outage-tables">
+          <!-- off table -->
+          <table class="outage-table">
+            <tr class="off-header">
+              <th colspan="3">OFF</th>
+            </tr>
+            <tr bgcolor="#d3d3d3">
+              <th>Voltage</th>
+              <th>Min</th>
+              <th>Max</th>
+            </tr>
+            <xsl:for-each select="root/limits/outage/off/voltage">
+              <tr>
+                <td><xsl:value-of select="@value"/></td>
+                <td>
+                  <xsl:attribute name="class">min</xsl:attribute>
+                  <xsl:value-of select="min"/>
+                </td>
+                <td>
+                  <xsl:attribute name="class">max</xsl:attribute>
+                  <xsl:value-of select="max"/>                  
+                </td>
+              </tr>
+            </xsl:for-each>
+          </table>
+          <table class="outage-table">
+            <tr>
+              <th colspan="3">ON</th>
+            </tr>
+            <tr bgcolor="#d3d3d3">
+              <th>Voltage</th>
+              <th>Min</th>
+              <th>Max</th>
+            </tr>
+            <xsl:for-each select="root/limits/outage/on/voltage">
+              <tr>
+                <td><xsl:value-of select="@value"/></td>
+                <td>
+                  <xsl:attribute name="class">min</xsl:attribute>
+                  <xsl:value-of select="min"/>
+                </td>
+                <td>
+                  <xsl:attribute name="class">max</xsl:attribute>
+                  <xsl:value-of select="max"/>                  
+                </td>
+              </tr>
+            </xsl:for-each>
+          </table>
+        </div><!-- end outage tables -->
+
+      </div><!-- end limits -->
 
       </div> <!-- end content -->
 

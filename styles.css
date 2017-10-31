@@ -54,6 +54,9 @@ tr:hover {
   background-color: #ff96ca;
 }
 
+.outage-header {
+  background-color: #ffff66;
+}
 
 /* Temperatures */
 .color23C {
@@ -116,6 +119,21 @@ tr:hover {
 
 .temp-table {
   margin-right: 10px;
+}
+
+.outage-tables {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.outage-table {
+  margin-right: 10px;
+}
+
+.off-header {
+  background-color: black;
+  color: white;
 }
 
 .board-table tr:nth-child(odd) {
