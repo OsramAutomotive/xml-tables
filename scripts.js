@@ -28,7 +28,7 @@ const addVoltage = () => {
   let voltageValue = prompt("Enter the value of the voltage:", "13.5");
   let firstTable = document.querySelectorAll('.temp-table')[0];
   let rowIndex = compareVoltage(voltageValue, firstTable);
-  const voltagesPresent = [for (n of firstTable.querySelectorAll('#voltage')) parseFloat(n.className)];
+  const voltagesPresent = [...firstTable.querySelectorAll('#voltage')].map(v => parseFloat(v.className));
   const error = handleAddVoltage(voltageValue, voltagesPresent, rowIndex);
   error && alert(error);
 };
@@ -41,7 +41,7 @@ const handleAddVoltage = (voltageValue, voltagesPresent, rowIndex) => {
   } else if (voltagesPresent.includes(parseFloat(voltageValue))) {
     return '"' + voltageValue + '"' + " is already present.";
   }
-  document.querySelectorAll('.temp-table').forEach(table => {
+  document.querySelectorAll(".temp-table, .outage-table").forEach(table => {
     let row = table.insertRow(rowIndex);
     row.id = "voltage";
     let voltage = document.createElement('th');
@@ -82,7 +82,7 @@ const addTemp = () => {
   let temperature = prompt("Enter the temperature:", "95C");
   let tempTables = document.querySelectorAll('.mode-tables')[0].querySelectorAll('.temp-table');
   const regex = /[^0-9-.]/g;
-  const temperaturesPresent = [for (t of tempTables) parseFloat(t.getAttribute('temperature').replace(regex, ''))];
+  const temperaturesPresent = [...tempTables].map(t => parseFloat(t.getAttribute('temperature').replace(regex, '')));
   const error = handleAddTemp(temperature, temperaturesPresent);
   error && alert(error);
 };
@@ -137,7 +137,7 @@ const removeTemp = () => {
 const addMode = () => {
   let modeName = prompt("Enter the name of the mode:", "MODE");
   let modes = document.querySelectorAll('.mode');
-  let modeNamesPresent = [for (mode of modes) mode.id.toLowerCase()];
+  let modeNamesPresent = [...modes].map(mode => mode.id.toLowerCase());
   console.log(modeName, modeNamesPresent);
   const error = handleAddMode(modeName, modeNamesPresent);
   error && alert(error);
@@ -170,6 +170,55 @@ const removeMode = () => {
 };
 
 
+// Outage
+const addOutage = () => {
+  const outageExists = document.getElementById('OUTAGE');
+
+  if (!outageExists) {
+    let limitsDiv = document.getElementsByClassName("limits")[0];
+    let outageDiv = document.createElement('div');
+    let outageHeader = document.createElement('h2');
+    let outageTablesDiv = document.createElement('div');
+
+    outageDiv.setAttribute("id", "OUTAGE");
+    outageHeader.setAttribute("class", "outage-header");
+    outageHeader.innerHTML = "OUTAGE";
+    outageTablesDiv.setAttribute("class", "outage-tables");
+
+    limitsDiv.appendChild(outageDiv);
+    outageDiv.appendChild(outageHeader);
+    outageDiv.appendChild(outageTablesDiv);
+    outageTablesDiv.appendChild(createOutageTable(outageTablesDiv, 'OFF'));
+    outageTablesDiv.appendChild(createOutageTable(outageTablesDiv, 'ON'));
+    outageTablesDiv.scrollIntoView();
+  }
+  else {
+    alert("OUTAGE is already present in this limits file.");
+  }
+};
+
+const removeOutage = () => {
+  const e = confirm("Are you sure you want to remove Outage from the file?");
+  if (e) {
+    let outage = document.getElementById('OUTAGE');
+    outage.scrollIntoView();
+    outage.parentNode.removeChild(outage);
+    saveChanges();
+  }
+};
+
+const createOutageTable = (parent, state) => {
+  let outageTable = document.getElementsByClassName('temp-table')[0].cloneNode(true);
+  outageTable.setAttribute("class", "outage-table");
+  outageTable.removeAttribute("temperature");
+  outageTable.setAttribute("state", state);
+  let firstRowHeader = outageTable.rows[0].getElementsByTagName('th')[0];
+  firstRowHeader.className = state.toLowerCase()+'-'+'header';
+  firstRowHeader.innerHTML = state;
+  return outageTable;
+};
+
+
 // Board
 const addBoard = () => {
   let boardTable = document.getElementById('board-table');
@@ -184,7 +233,7 @@ const addBoard = () => {
   cell1.innerHTML = 'B' + newBoardNumber;
   cell2.innerHTML = "Module";
   cell3.innerHTML = "";
-  cell4.innerHTML = "False";
+  cell4.innerHTML = "";
 };
 
 const getNewBoardNumber = (lastBoard) => {

@@ -55,6 +55,9 @@ tr:hover {
 }
 
 .outage-header {
+  margin: 10px 10px;
+  width: 100%;
+  border-radius: 5px;
   background-color: #ffff66;
 }
 
@@ -102,7 +105,7 @@ tr:hover {
 }
 
 .actions {
-  margin: 30px;
+  /*border: solid;*/
   display: flex;
   flex-direction: column;
   justify-content: center;

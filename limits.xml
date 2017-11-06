@@ -11,32 +11,32 @@
     <board id="B1">
       <module>LB</module>
       <bins></bins>
-      <outage>False</outage>
+      <outage></outage>
     </board>
     <board id="B2">
       <module>HB</module>
       <bins></bins>
-      <outage>False</outage>
+      <outage></outage>
     </board>
     <board id="B3">
       <module>DRL</module>
       <bins></bins>
-      <outage>False</outage>
+      <outage></outage>
     </board>
     <board id="B4">
       <module>PARK</module>
       <bins></bins>
-      <outage>False</outage>
+      <outage></outage>
     </board>
     <board id="B5">
-      <module>Turn</module>
-      <bins>8J 4E</bins>
-      <outage>True</outage>
+      <module>TURN</module>
+      <bins></bins>
+      <outage>YES</outage>
     </board>
     <board id="B6">
-      <module>Outage</module>
+      <module>OUTAGE</module>
       <bins></bins>
-      <outage>NA</outage>
+      <outage></outage>
     </board>
   </boards>
   
@@ -134,7 +134,7 @@
         </temperature>
       </mode>
   
-        <mode name="TURN">
+      <mode name="TURN">
         <temperature value="23C">
           <voltage value="9">
             <min>1.11</min>
@@ -179,7 +179,7 @@
         </temperature>
       </mode>
       
-        <mode name="PARKTURN">
+      <mode name="PARKTURN">
         <temperature value="23C">
           <voltage value="9">
             <min>1.11</min>
@@ -224,7 +224,7 @@
         </temperature>
       </mode>
   
-        <mode name="DRLTURN">
+      <mode name="DRLTURN">
         <temperature value="23C">
           <voltage value="9">
             <min>1.11</min>
@@ -271,39 +271,39 @@
   
     </modes>
 
-    <outage>
+
+    <outage name="OUTAGE">
       <off>
-        <voltage value="9.0V">
+        <voltage value="9">
           <min>-0.3</min>
           <max>0.3</max>
         </voltage>
-        <voltage value="14.1V">
+        <voltage value="14.1">
           <min>-0.3</min>
           <max>0.3</max>
         </voltage>
-        <voltage value="16.0V">
+        <voltage value="16.0">
           <min>-0.3</min>
           <max>0.3</max>
         </voltage>
       </off>
       <on>
-        <voltage value="9.0V">
+        <voltage value="9">
           <min>7.7</min>
           <max>20</max>
         </voltage>
-        <voltage value="14.1V">
+        <voltage value="14.1">
           <min>12.8</min>
           <max>20</max>
         </voltage>
-        <voltage value="16.0V">
+        <voltage value="16">
           <min>14.7</min>
           <max>20</max>
         </voltage>
       </on>
     </outage>
 
+
   </limits>
   
 </root>
-
-
